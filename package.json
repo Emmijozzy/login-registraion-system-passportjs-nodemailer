@@ -1,0 +1,32 @@
+{
+  "name": "login-registration-system",
+  "version": "1.0.0",
+  "description": "Login and registration api along with passport authentication",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "googleapis": "^100.0.0",
+    "helmet": "^5.0.2",
+    "joi": "^17.6.0",
+    "mongoose": "^6.2.10",
+    "nodemailer": "^6.7.3",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
+    "req-flash": "^0.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
