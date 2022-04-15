@@ -49,11 +49,11 @@ controller.passwordReset = async ( req, res ) => {
     // send_email("logunsuyi@gmail.com", 'Reset of password', 'html', msg)
 
     await sendEmail(payload)
-    res.send("password reset link sent to your email account");
+    res.json({"apiRes": "password reset link sent to your email account"});
 
   } catch(err) {
     console.log(err);
-    res.send("An error occoured")
+    res.json({"apiErr": "An error occoured while trying to send reset-password link"})
   }
 
 }
@@ -75,7 +75,7 @@ controller.resetWithToken = async (req, res) => {
     if(error) return res.status(400).send(error.details[0].message);
 
     const user = await User.findById(req.params.userId);
-    if(!user) return res.status(400).send("invalid link or link expired")
+    if(!user) return res.status(400).json({"apiMsg": "invalid link or link expired"})
 
     const token = await Token.findOne({
       userId: user._id,
